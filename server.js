@@ -6,7 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 var config = require('./lib/configLoader');    
 var db = require('./lib/database');
 
