@@ -3,11 +3,11 @@ version: '2'
 services:
 
   node:
-    build: 
+    build:
       context: .
       dockerfile: node.dockerfile
     ports:
-     - "3000:3000"
+      - "3000:3000"
     networks:
       - nodeapp-network
       
