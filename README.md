@@ -5,29 +5,17 @@ The app uses Mongoose to create a simple database that stores Docker commands an
 
 ##To run the app with Docker Containers:
 
-###Option 1: Use Docker Compose
+###Starting the Application with Docker Compose
 
-1. Install Docker Toolbox (http://docker.com/toolbox).
+1. Install Docker for Windows or Docker for Mac (If you're on Windows 7 install Docker Toolbox: http://docker.com/toolbox).
 
-2. Open the `Docker QuickStart Terminal`. After VirtualBox starts in the terminal navigate to the app's folder.
+2. Open a command prompt at the root of the application's folder.
 
 3. Run `docker-compose build`
 
 4. Run `docker-compose up`
 
-4. Navigate to http://192.168.99.100:3000 in your browser to view the site. This assumes that's the IP assigned to VirtualBox - change if needed.
-
-
-###Option 2: Manually run Docker commands
-
-1. Install Docker Toolbox (http://docker.com/toolbox).
-
-2. Open the `Docker QuickStart Terminal`. After VirtualBox starts in the terminal navigate to the app's folder.
-
-3. Run the commands listed in `node.dockerfile` (see the comments at the top of the file) in the `Docker QuickStart Terminal`.
-
-4. Navigate to http://192.168.99.100:3000 in your browser to view the site. This assumes that's the IP assigned to VirtualBox - change if needed.
-
+5. Navigate to http://localhost:3000 (http://192.168.99.100:3000 if using Docker Toolbox) in your browser to view the site. This assumes that's the IP assigned to VirtualBox - change if needed.
 
 ##To run the app with Node.js and MongoDB (without Docker):
 
@@ -44,6 +32,8 @@ The app uses Mongoose to create a simple database that stores Docker commands an
 6. Run `node server.js` to start the server.
 
 7. Navigate to http://localhost:3000 in your browser.
+
+Interested in learning more about Docker? Visit https://www.pluralsight.com/courses/docker-web-development to view my Docker for Web Developers course.
 
 
 
