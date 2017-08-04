@@ -6,14 +6,14 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
-    "debug": "^2.6.1",
-    "express": "^4.14.1",
+    "debug": "^2.6.8",
+    "express": "^4.15.3",
     "express-handlebars": "3.0.0",
-    "morgan": "^1.8.1",
-    "serve-favicon": "^2.3.2",
-    "mongoose": "^4.8.3",
+    "morgan": "^1.8.2",
+    "serve-favicon": "^2.4.3",
+    "mongoose": "^4.11.5",
     "readline": "1.3.0"
   }
 }

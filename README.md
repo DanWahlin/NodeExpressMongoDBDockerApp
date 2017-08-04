@@ -1,9 +1,9 @@
 # Node.js with MongoDB and Docker Demo
 
 Application demo designed to show how Node.js and MongoDB can be run in Docker containers. 
-The app uses Mongoose to create a simple database that stores Docker commands and examples.
+The app uses Mongoose to create a simple database that stores Docker commands and examples. 
 
-##To run the app with Docker Containers:
+Interested in learning more about Docker? Visit https://www.pluralsight.com/courses/docker-web-development to view my Docker for Web Developers course.
 
 ###Starting the Application with Docker Compose
 
@@ -15,7 +15,15 @@ The app uses Mongoose to create a simple database that stores Docker commands an
 
 4. Run `docker-compose up`
 
-5. Navigate to http://localhost:3000 (http://192.168.99.100:3000 if using Docker Toolbox) in your browser to view the site. This assumes that's the IP assigned to VirtualBox - change if needed.
+5. Run `docker ps -a` and note the ID of the Node container
+
+6. Run `docker exec -it <nodeContainerID> sh` (replace <nodeContainerID> with the proper ID) to sh into the container
+
+7. Run `node dbSeeder.js` to seed the MongoDB database
+
+8. Type `exit` to leave the sh session
+
+9. Navigate to http://localhost:3000 (http://192.168.99.100:3000 if using Docker Toolbox) in your browser to view the site. This assumes that's the IP assigned to VirtualBox - change if needed.
 
 ##To run the app with Node.js and MongoDB (without Docker):
 
@@ -29,11 +37,9 @@ The app uses Mongoose to create a simple database that stores Docker commands an
 
 5. Run `node dbSeeder.js` to get the sample data loaded into MongoDB. Exit the command prompt.
 
-6. Run `node server.js` to start the server.
+6. Run `npm start` to start the server.
 
 7. Navigate to http://localhost:3000 in your browser.
-
-Interested in learning more about Docker? Visit https://www.pluralsight.com/courses/docker-web-development to view my Docker for Web Developers course.
 
 
 
