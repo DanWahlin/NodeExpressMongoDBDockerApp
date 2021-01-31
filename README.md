@@ -38,9 +38,9 @@ Interested in learning more about Docker? Visit https://www.pluralsight.com/cour
 
 ## To run the app with Node.js and MongoDB (without Docker):
 
-1. Install and start MongoDB (https://docs.mongodb.org/manual/installation).
+1. Install and start MongoDB (https://docs.mongodb.com/manual/administration/install-community/).
 
-2. Install Node.js (http://nodejs.org).
+2. Install the LTS version of Node.js (http://nodejs.org).
 
 3. Open `config/config.development.json` and adjust the host name to your MongoDB server name (`localhost` normally works if you're running locally). 
 
