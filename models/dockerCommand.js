@@ -6,8 +6,7 @@ var mongoose        = require('mongoose'),
     
 var exampleSchema = Schema({
     example     : { type: String, required: true },
-    description : { type: String, required: true },
-
+    description : { type: String, required: true }
 });
 
 var dockerCommandSchema = Schema({
