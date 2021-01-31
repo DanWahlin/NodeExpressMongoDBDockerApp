@@ -1,11 +1,5 @@
 # Build: docker build -f node.dockerfile -t danwahlin/node .
 
-# Option 1
-# Start MongoDB and Node (link Node to MongoDB container with legacy linking)
- 
-# docker run -d --name my-mongodb mongo
-# docker run -d -p 3000:3000 --link my-mongodb:mongodb --name nodeapp danwahlin/node
-
 # Option 2: Create a custom bridge network and add containers into it
 
 # docker network create --driver bridge isolated_network
@@ -14,6 +8,12 @@
 
 # Seed the database with sample database
 # Run: docker exec nodeapp node dbSeeder.js
+
+# Option 2 (Legacy Linking)
+# Start MongoDB and Node (link Node to MongoDB container with legacy linking)
+ 
+# docker run -d --name my-mongodb mongo
+# docker run -d -p 3000:3000 --link my-mongodb:mongodb --name nodeapp danwahlin/node
 
 FROM node:latest
 
