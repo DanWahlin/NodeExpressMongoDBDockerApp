@@ -1,22 +1,27 @@
-var express = require('express');
-var exphbs = require('express-handlebars');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express'),
+      exphbs = require('express-handlebars'),
+      path = require('path'),
+      favicon = require('serve-favicon'),
+      logger = require('morgan'),
+      cookieParser = require('cookie-parser'),
+      bodyParser = require('body-parser'),
+      Handlebars = require('handlebars'),
+      { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access'),
 
-var port = process.env.PORT || 3000;
-var config = require('./lib/configLoader');    
-var db = require('./lib/database');
+      port = process.env.PORT || 3000,
+      config = require('./lib/configLoader'),    
+      db = require('./lib/database'),
 
-var routes = require('./routes/index');
-var app = express();
+      routes = require('./routes/index'),
+      app = express();
 
 // view engine setup
-var hbs = exphbs.create({
+const hbs = exphbs.create({
     extname: '.hbs',
     defaultLayout: 'masterLayout',
+    // https://www.npmjs.com/package/@handlebars/allow-prototype-access
+    // Need to add due to security change in Handlebars 4.6+
+    handlebars:  allowInsecurePrototypeAccess(Handlebars)
 });
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
@@ -74,10 +79,10 @@ app.listen(port, function (err) {
 //*********************************************************
 //    Quick and dirty way to detect event loop blocking
 //*********************************************************
-var lastLoop = Date.now();
+let lastLoop = Date.now();
 
 function monitorEventLoop() {
-    var time = Date.now();
+    const time = Date.now();
     if (time - lastLoop > 1000) console.error('Event loop blocked ' + (time - lastLoop));
     lastLoop = time;
     setTimeout(monitorEventLoop, 200);
