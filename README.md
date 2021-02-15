@@ -36,6 +36,8 @@ Interested in learning more about Docker? Visit https://www.pluralsight.com/cour
 
 9. Navigate to http://localhost:3000 (http://192.168.99.100:3000 if using Docker Toolbox) in your browser to view the site. This assumes that's the IP assigned to VirtualBox - change if needed.
 
+10. Run `docker-compose down` to stop the containers and remove them.
+
 ## To run the app with Node.js and MongoDB (without Docker):
 
 1. Install and start MongoDB (https://docs.mongodb.com/manual/administration/install-community/).
