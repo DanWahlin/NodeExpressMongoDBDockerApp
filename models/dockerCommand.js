@@ -17,5 +17,4 @@ var dockerCommandSchema = Schema({
 
 var DockerCommandModel = mongoose.model('dockerCommand', dockerCommandSchema);
 
-
 module.exports = DockerCommandModel;
