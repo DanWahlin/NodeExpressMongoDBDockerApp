@@ -15,18 +15,18 @@
 # docker run -d --name my-mongodb mongo
 # docker run -d -p 3000:3000 --link my-mongodb:mongodb --name nodeapp danwahlin/node
 
-FROM node:alpine
+FROM        node:alpine
 
-LABEL author="Dan Wahlin"
+LABEL       author="Dan Wahlin"
 
-ENV NODE_ENV=development 
-ENV PORT=3000
+ENV         NODE_ENV=production
+ENV         PORT=3000
 
-COPY      . /var/www
-WORKDIR   /var/www
+WORKDIR     /var/www
+COPY        package.json package-lock.json ./
+RUN         npm install
 
-RUN       npm install
+COPY        . ./
+EXPOSE      $PORT
 
-EXPOSE $PORT
-
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT  ["npm", "start"]
