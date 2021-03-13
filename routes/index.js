@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
 
 /* GET new command page */
 router.get('/newcommand', (req, res, next) => {
-  res.render('newCommand');
+  res.render('newcommand');
 });
 
 router.post('/newcommand', (req, res, next) => {
