@@ -1,10 +1,10 @@
 const express = require('express'),
       exphbs = require('express-handlebars'),
+      fs = require('fs'),
       path = require('path'),
       favicon = require('serve-favicon'),
-      logger = require('morgan'),
+      morgan = require('morgan'),
       cookieParser = require('cookie-parser'),
-      bodyParser = require('body-parser'),
       Handlebars = require('handlebars'),
       { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access'),
 
@@ -27,11 +27,13 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
+// create a write stream (in append mode)
+const accessLogStream = fs.createWriteStream(path.join(__dirname, '/logs/access.log'), { flags: 'a' });
+app.use(morgan('combined', { stream: accessLogStream }));
 
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
