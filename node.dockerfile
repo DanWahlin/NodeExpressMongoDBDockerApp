@@ -1,6 +1,6 @@
 # Build: docker build -f node.dockerfile -t danwahlin/node .
 
-# Option 2: Create a custom bridge network and add containers into it
+# Option 1: Create a custom bridge network and add containers into it
 
 # docker network create --driver bridge isolated_network
 # docker run -d --net=isolated_network --name mongodb mongo
