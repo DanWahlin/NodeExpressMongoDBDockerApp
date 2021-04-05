@@ -12,6 +12,8 @@ services:
       - "3000:3000"
     networks:
       - nodeapp-network
+    volumes:
+      - ./logs:/var/www/logs
     depends_on: 
       - mongodb
       
