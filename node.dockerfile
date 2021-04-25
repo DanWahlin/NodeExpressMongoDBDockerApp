@@ -26,7 +26,7 @@ ARG         buildversion
 ENV         NODE_ENV=production
 ENV         PORT=3000
 ENV         build=$buildversion
-
+ 
 WORKDIR     /var/www
 COPY        package.json package-lock.json ./
 RUN         npm install
