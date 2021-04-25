@@ -8,6 +8,8 @@ services:
     build:
       context: .
       dockerfile: node.dockerfile
+      args:
+        buildversion: 1
     ports:
       - "3000:3000"
     networks:
