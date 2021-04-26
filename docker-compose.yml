@@ -9,11 +9,7 @@ services:
       context: .
       dockerfile: node.dockerfile
       args:
-        buildversion: 1
-    # environment: 
-    #   - NODE_ENV=production
-    #   - PORT=3000
-    #   - build=1
+        PACKAGES: "nano wget curl"
     ports:
       - "3000:3000"
     networks:

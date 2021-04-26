@@ -21,12 +21,11 @@ FROM        node:alpine
 
 LABEL       author="Dan Wahlin"
 
-ARG         buildversion
+ARG         PACKAGES=nano
 
-ENV         NODE_ENV=production
-ENV         PORT=3000
-ENV         build=$buildversion
- 
+ENV         TERM xterm
+RUN         apk update && apk add $PACKAGES
+
 WORKDIR     /var/www
 COPY        package.json package-lock.json ./
 RUN         npm install
