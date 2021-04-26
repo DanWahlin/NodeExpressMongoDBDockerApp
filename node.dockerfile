@@ -33,6 +33,4 @@ RUN         npm install
 COPY        . ./
 EXPOSE      $PORT
 
-RUN         echo "Build version: $build"
-
 ENTRYPOINT  ["npm", "start"]
