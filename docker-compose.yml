@@ -16,6 +16,9 @@ services:
       - nodeapp-network
     volumes:
       - ./logs:/var/www/logs
+    environment:
+      - NODE_ENV=production
+      - APP_VERSION=1.0
     depends_on: 
       - mongodb
       
