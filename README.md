@@ -26,7 +26,7 @@ Interested in learning more about Docker? Visit https://www.pluralsight.com/cour
 
 4. Run `docker-compose up`
 
-5. Run `docker ps -a` and note the ID of the Node container
+5. Open another command prompt and run `docker ps -a` and note the ID of the Node container
 
 6. Run `docker exec -it <nodeContainerID> sh` (replace <nodeContainerID> with the proper ID) to sh into the container
 
