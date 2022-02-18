@@ -17,7 +17,7 @@
 # docker run -d --name my-mongodb mongo
 # docker run -d -p 3000:3000 --link my-mongodb:mongodb --name nodeapp danwahlin/nodeapp
 
-FROM        node:alpine
+FROM        node:lts-alpine
 
 LABEL       author="Dan Wahlin"
 
