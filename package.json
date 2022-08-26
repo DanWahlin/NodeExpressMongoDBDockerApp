@@ -14,7 +14,7 @@
     "express": "^4.17.3",
     "express-handlebars": "5.3.1",
     "handlebars": "^4.7.7",
-    "mongoose": "^6.2.2",
+    "mongoose": "^6.4.6",
     "morgan": "^1.10.0",
     "postcss": "^8.4.6",
     "postcss-cli": "^9.1.0",
