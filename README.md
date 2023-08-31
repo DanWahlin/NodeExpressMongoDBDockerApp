@@ -7,13 +7,13 @@ Interested in learning more about Docker? Visit https://www.pluralsight.com/cour
 
 ### Starting the Application with Docker Containers:
 
-1. Install Docker for Windows or Docker for Mac (If you're on Windows 7 install Docker Toolbox: http://docker.com/toolbox).
+1. Install [Docker Desktop](https://docker.com/get-started)
 
 2. Open a command prompt.
 
 3. Run the commands listed in `node.dockerfile` (see the comments at the top of the file).
 
-4. Navigate to http://localhost:3000. Use http://192.168.99.100:8080 in your browser to view the site if using Docker toolbox. This assumes that's the IP assigned to VirtualBox - change if needed.
+4. Navigate to http://localhost:3000.
 
 
 ### Starting the Application with Docker Compose

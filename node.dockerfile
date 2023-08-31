@@ -1,12 +1,13 @@
-# Build: docker build -f node.dockerfile -t danwahlin/nodeapp .
+# Build: docker build -f node.dockerfile -t nodeapp .
 
 # Option 1: Create a custom bridge network and add containers into it
 
 # docker network create --driver bridge isolated_network
 # docker run -d --net=isolated_network --name mongodb mongo
 
-# NOTE: $(pwd) in the following line is for Mac and Linux. See https://blog.codewithdan.com/docker-volumes-and-print-working-directory-pwd/ for Windows examples.
-# docker run -d --net=isolated_network --name nodeapp -p 3000:3000 -v $(pwd)/logs:/var/www/logs danwahlin/nodeapp
+# NOTE: $(pwd) in the following line is for Mac and Linux. Use ${PWD} for Powershell. 
+# See https://blog.codewithdan.com/docker-volumes-and-print-working-directory-pwd/ syntax examples.
+# docker run -d --net=isolated_network --name nodeapp -p 3000:3000 -v $(pwd)/logs:/var/www/logs nodeapp
 
 # Seed the database with sample database
 # Run: docker exec nodeapp node dbSeeder.js
@@ -27,7 +28,7 @@ ENV         TERM xterm
 RUN         apk update && apk add $PACKAGES
 
 WORKDIR     /var/www
-COPY        package.json package-lock.json ./
+COPY        package*.json ./
 RUN         npm install
 
 COPY        . ./
