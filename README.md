@@ -18,15 +18,15 @@ Interested in learning more about Docker? Visit https://www.pluralsight.com/cour
 
 ### Starting the Application with Docker Compose
 
-1. Install Docker for Windows or Docker for Mac (If you're on Windows 7 install Docker Toolbox: http://docker.com/toolbox).
+1. Install [Docker Desktop](https://docker.com/get-started)
 
 2. Open a command prompt at the root of the application's folder.
 
-3. Run `docker-compose build`
+3. Run `docker compose build`
 
-4. Run `docker-compose up`
+4. Run `docker compose up`
 
-5. Open another command prompt and run `docker ps -a` and note the ID of the Node container
+5. Open another command prompt and run `docker compose ps -a` and note the ID of the Node container
 
 6. Run `docker exec -it <nodeContainerID> sh` (replace <nodeContainerID> with the proper ID) to sh into the container
 
