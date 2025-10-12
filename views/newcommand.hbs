@@ -1,19 +1,19 @@
-<form class="mb-6" method="post">
-  <div class="flex flex-col mb-4">
+<form class="flex flex-col space-y-4 mb-6" method="post">
+  <div class="flex flex-col">
     <label class="mb-2 font-bold text-lg" for="command">Command</label>
-    <input class="py-2 px-3" type="text" name="command" id="command">
+    <input class="block w-full py-2 px-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" type="text" name="command" id="command">
   </div>
-  <div class="flex flex-col mb-4">
+  <div class="flex flex-col">
     <label class="mb-2 font-bold text-lg" for="description">Description</label>
-    <textarea class="py-4 px-3" name="description" id="description"></textarea>
+    <textarea class="block w-full py-4 px-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" name="description" id="description"></textarea>
   </div>
-  <div class="flex flex-col mb-4">
+  <div class="flex flex-col">
     <label class="mb-2 font-bold text-lg" for="example">Example</label>
-    <input class="py-2 px-3" type="text" name="example" id="example">
+    <input class="block w-full py-2 px-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" type="text" name="example" id="example">
   </div>
-  <div class="flex flex-col mb-4">
+  <div class="flex flex-col">
     <label class="mb-2 font-bold text-lg" for="ex_description">Example Description</label>
-    <input class="py-2 px-3" type="text" name="ex_description" id="ex_description">
+    <input class="block w-full py-2 px-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" type="text" name="ex_description" id="ex_description">
   </div>
-  <button type="submit" class="text-lg p-2 rounded">Add Command</button>
+  <button type="submit" class="self-start inline-flex items-center px-4 py-2 text-lg font-semibold text-white bg-gray-800 rounded shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">Add Command</button>
 </form>

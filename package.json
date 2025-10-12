@@ -4,24 +4,22 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/styles.css"
+    "tailwind:css": "tailwindcss -i public/styles/tailwind.css -o public/styles/styles.css"
   },
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
-    "autoprefixer": "^10.4.15",
-    "cookie-parser": "^1.4.6",
-    "debug": "^4.3.4",
-    "express": "^4.18.2",
-    "express-handlebars": "7.1.2",
+    "cookie-parser": "^1.4.7",
+    "debug": "^4.4.3",
+    "express": "5.1.0",
+    "express-handlebars": "8.0.3",
     "handlebars": "^4.7.8",
-    "mongoose": "^7.5.0",
-    "morgan": "^1.10.0",
-    "postcss": "^8.4.29",
-    "postcss-cli": "^10.1.0",
+    "mongoose": "^8.19.1",
+    "morgan": "^1.10.1",
     "readline": "1.3.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.1"
   },
   "devDependencies": {
-    "tailwindcss": "^2.0.3"
+    "@tailwindcss/cli": "^4.1.14",
+    "tailwindcss": "4.1.14"
   }
 }
