@@ -1,9 +1,12 @@
-module.exports = {
-    purge: [],
-    darkMode: false, // or 'media' or 'class'
-    theme: {
-      extend: {},
-    },
-    variants: {},
-    plugins: [],
-}
+export default {
+  content: [
+    "./views/**/*.{hbs,handlebars,html}",
+    "./routes/**/*.js",
+    "./lib/**/*.js",
+    "./public/scripts/**/*.js"
+  ],
+  theme: {
+    extend: {}
+  },
+  plugins: []
+};
