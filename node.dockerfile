@@ -1,3 +1,25 @@
+FROM        node:alpine
+
+LABEL       author="Dan Wahlin"
+ARG         PACKAGES=nano
+
+ENV         NODE_ENV=production
+ENV         PORT=3000
+ENV         TERM=xterm
+
+RUN         apk update && apk add --no-cache $PACKAGES
+
+WORKDIR     /var/www
+
+COPY        package*.json ./
+RUN         npm ci --only=production && npm cache clean --force
+
+COPY        . ./
+
+EXPOSE      $PORT
+
+ENTRYPOINT  ["npm", "start"]
+
 # Build: docker build -f node.dockerfile -t nodeapp .
 
 # Option 1: Create a custom bridge network and add containers into it
@@ -17,21 +39,3 @@
  
 # docker run -d --name my-mongodb mongo
 # docker run -d -p 3000:3000 --link my-mongodb:mongodb --name nodeapp danwahlin/nodeapp
-
-FROM        node:alpine
-
-LABEL       author="Dan Wahlin"
-
-ARG         PACKAGES=nano
-
-ENV         TERM xterm
-RUN         apk update && apk add $PACKAGES
-
-WORKDIR     /var/www
-COPY        package*.json ./
-RUN         npm install
-
-COPY        . ./
-EXPOSE      3000
-
-ENTRYPOINT  ["npm", "start"]
