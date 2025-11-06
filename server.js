@@ -1,19 +1,22 @@
-const express = require('express'),
-      exphbs = require('express-handlebars'),
-      fs = require('fs'),
-      path = require('path'),
-      favicon = require('serve-favicon'),
-      morgan = require('morgan'),
-      cookieParser = require('cookie-parser'),
-      Handlebars = require('handlebars'),
-      { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access'),
+import express from 'express';
+import exphbs from 'express-handlebars';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import favicon from 'serve-favicon';
+import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
+import Handlebars from 'handlebars';
+import { allowInsecurePrototypeAccess } from '@handlebars/allow-prototype-access';
+import config from './lib/configLoader.js';
+import db from './lib/database.js';
+import routes from './routes/index.js';
 
-      port = process.env.PORT || 3000,
-      config = require('./lib/configLoader'),    
-      db = require('./lib/database'),
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-      routes = require('./routes/index'),
-      app = express();
+const port = process.env.PORT || 3000;
+const app = express();
 
 // view engine setup
 const hbs = exphbs.create({
@@ -94,4 +97,4 @@ if (process.env.NODE_ENV === 'development') {
     monitorEventLoop();
 }
 
-module.exports = app;
+export default app;

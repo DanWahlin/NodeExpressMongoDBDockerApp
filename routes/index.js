@@ -1,7 +1,8 @@
-const express = require('express'),
-  router = express.Router(),
-  getDockerCommands = require('../lib/dockerCommandsRepository'),
-  DockerCommandModel = require('../models/dockerCommand');
+import express from 'express';
+import getDockerCommands from '../lib/dockerCommandsRepository.js';
+import DockerCommandModel from '../models/dockerCommand.js';
+
+const router = express.Router();
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
@@ -35,4 +36,4 @@ router.post('/newcommand', async (req, res, next) => {
   res.redirect('/');
 });
 
-module.exports = router;
+export default router;
