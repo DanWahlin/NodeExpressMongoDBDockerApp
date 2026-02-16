@@ -19,6 +19,9 @@ services:
       - APP_VERSION=1.0
     depends_on: 
       - mongodb
+    # restart: on-failure
+    # deploy:
+    #   replicas: 5
       
   mongodb:
     container_name: mongodb
