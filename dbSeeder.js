@@ -1,7 +1,6 @@
-'use strict';
-var dataInitializer = require('./lib/dataSeeder'),
-    config = require('./config/config.development.json'),
-    db = require('./lib/database');
+import dataInitializer from './lib/dataSeeder.js';
+import config from './config/config.development.json' with { type: 'json' };
+import db from './lib/database.js';
 
 db.init(config.databaseConfig);
 

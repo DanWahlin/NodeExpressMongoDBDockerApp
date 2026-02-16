@@ -1,20 +1,19 @@
-'use strict';
+import mongoose from 'mongoose';
 
-var mongoose        = require('mongoose'),
-    Schema          = mongoose.Schema,
-    ObjectId        = Schema.Types.ObjectId;
+const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
     
-var exampleSchema = Schema({
-    example     : { type: String, required: true },
-    description : { type: String, required: true },
+const exampleSchema = new Schema({
+  example: { type: String, required: true },
+  description: { type: String, required: true },
 });
 
-var dockerCommandSchema = Schema({
-    command                 : { type: String, required: true },
-    description             : { type: String, required: true },
-    examples                : [exampleSchema]
+const dockerCommandSchema = new Schema({
+  command: { type: String, required: true },
+  description: { type: String, required: true },
+  examples: [exampleSchema]
 });
 
-var DockerCommandModel = mongoose.model('dockerCommand', dockerCommandSchema);
+const DockerCommandModel = mongoose.model('dockerCommand', dockerCommandSchema);
 
-module.exports = DockerCommandModel;
+export default DockerCommandModel;

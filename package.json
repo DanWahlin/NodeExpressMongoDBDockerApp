@@ -2,6 +2,7 @@
   "name": "expressite",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "node server.js",
     "tailwind:css": "tailwindcss -i public/styles/tailwind.css -o public/styles/styles.css"
